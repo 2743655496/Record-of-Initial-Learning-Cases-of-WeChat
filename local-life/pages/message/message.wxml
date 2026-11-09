@@ -1,0 +1,19 @@
+<!--pages/message/message.wxml-->
+<text>pages/message/message.wxml</text>
+<wxs module="m1">
+  var msg = "hello world";
+  var getMax = function(array) {
+    var max = undefined;
+    for (var i = 0; i < array.length; ++i) {
+      max = max === undefined ? array[i] : (max >= array[i] ? max : array[i]);
+    }
+    return max;
+  }
+  module.exports = {
+    message: msg,
+    getMax: getMax
+  };
+</wxs>
+
+<!-- 使用导出内容 -->
+<view>{{m1.message}}</view>

@@ -1,0 +1,645 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "默认模块",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/api/items": {
+      "get": {
+        "summary": "123",
+        "deprecated": false,
+        "description": "获取用户信息",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer",
+                      "const": 200,
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "enum": [
+                        "123",
+                        "143"
+                      ],
+                      "x-apifox-enum": [
+                        {
+                          "value": "123",
+                          "name": "123",
+                          "description": ""
+                        },
+                        {
+                          "value": "143",
+                          "name": "143",
+                          "description": ""
+                        }
+                      ]
+                    },
+                    "data": {
+                      "type": "string"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "statusCode",
+                    "message",
+                    "data"
+                  ],
+                  "required": [
+                    "statusCode",
+                    "data",
+                    "message"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "example": {
+                  "statusCode": 200,
+                  "message": "123",
+                  "data": "cupidatat in"
+                }
+              }
+            },
+            "headers": {},
+            "x-apifox-name": "成功",
+            "x-apifox-ordering": 0
+          }
+        },
+        "security": [],
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "x-run-in-apifox": "https://app.apifox.com/web/project/9008627/apis/api-532804257-run"
+      }
+    },
+    "/slides": {
+      "get": {
+        "summary": "轮播图",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string",
+                        "x-apifox-mock": "{{$image.url}}"
+                      },
+                      "link": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    },
+                    "x-apifox-orders": [
+                      "id",
+                      "image",
+                      "link"
+                    ],
+                    "required": [
+                      "id",
+                      "image",
+                      "link"
+                    ],
+                    "x-apifox-ignore-properties": []
+                  }
+                }
+              }
+            },
+            "headers": {},
+            "x-apifox-name": "成功",
+            "x-apifox-ordering": 0
+          }
+        },
+        "security": [],
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "x-run-in-apifox": "https://app.apifox.com/web/project/9008627/apis/api-533955517-run"
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "获取九宫格数据",
+        "deprecated": false,
+        "description": "获取九宫格数据的方法",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "icon": {
+                        "type": "string"
+                      }
+                    },
+                    "x-apifox-orders": [
+                      "id",
+                      "name",
+                      "icon"
+                    ],
+                    "required": [
+                      "id",
+                      "name",
+                      "icon"
+                    ],
+                    "x-apifox-ignore-properties": []
+                  },
+                  "minItems": 9,
+                  "maxItems": 9
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "name": "美食",
+                    "icon": "https://via.placeholder.com/1769x1524/793e41/80ca0a.gif"
+                  },
+                  {
+                    "id": 2,
+                    "name": "洗浴中心",
+                    "icon": "https://via.placeholder.com/827x440/849c91/2f35ba.png"
+                  },
+                  {
+                    "id": 3,
+                    "name": "结婚啦",
+                    "icon": "https://via.placeholder.com/1071x1927/b4f190/02e8ad.gif"
+                  },
+                  {
+                    "id": 4,
+                    "name": "卡拉OK",
+                    "icon": "https://via.placeholder.com/737x335/fd7f04/f375cf.webp"
+                  },
+                  {
+                    "id": 5,
+                    "name": "找工作",
+                    "icon": "https://via.placeholder.com/758x229/ecb9fc/8ebd94.gif"
+                  },
+                  {
+                    "id": 6,
+                    "name": "辅导班",
+                    "icon": "https://via.placeholder.com/424x642/eecbde/a7fe4c.jpg"
+                  },
+                  {
+                    "id": 7,
+                    "name": "汽车保养",
+                    "icon": "https://via.placeholder.com/353x1273/9c9d3b/33e1a1.png"
+                  },
+                  {
+                    "id": 8,
+                    "name": "租房",
+                    "icon": "https://via.placeholder.com/113x633/aeac9b/1cfada.gif"
+                  },
+                  {
+                    "id": 9,
+                    "name": "装修",
+                    "icon": "https://via.placeholder.com/224x435/6db5fb/9d6cc0.gif"
+                  }
+                ]
+              }
+            },
+            "headers": {},
+            "x-apifox-name": "成功",
+            "x-apifox-ordering": 0
+          }
+        },
+        "security": [],
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "x-run-in-apifox": "https://app.apifox.com/web/project/9008627/apis/api-533967675-run"
+      }
+    },
+    "/api/color": {
+      "get": {
+        "summary": "上拉触底",
+        "deprecated": false,
+        "description": "下拉触底接口",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "contentMediaType": "application/json",
+                    "contentEncoding": "base64",
+                    "enum": [
+                      "111,222,333",
+                      "111,444,555",
+                      "222,333,444",
+                      "111,222,335",
+                      "444,111,111",
+                      "112,324,231",
+                      "342,423,543",
+                      "123,455,664",
+                      "149,234,123",
+                      "111,455,333"
+                    ],
+                    "x-apifox-enum": [
+                      {
+                        "value": "111,222,333",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "111,444,555",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "222,333,444",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "111,222,335",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "444,111,111",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "112,324,231",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "342,423,543",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "123,455,664",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "149,234,123",
+                        "name": "",
+                        "description": ""
+                      },
+                      {
+                        "value": "111,455,333",
+                        "name": "",
+                        "description": ""
+                      }
+                    ]
+                  },
+                  "minItems": 10,
+                  "maxItems": 10
+                },
+                "example": [
+                  "111,222,335",
+                  "111,222,333",
+                  "222,333,444",
+                  "149,234,123",
+                  "111,222,335",
+                  "342,423,543",
+                  "149,234,123",
+                  "444,111,111",
+                  "111,444,555",
+                  "112,324,231"
+                ]
+              }
+            },
+            "headers": {},
+            "x-apifox-name": "成功",
+            "x-apifox-ordering": 0
+          }
+        },
+        "security": [],
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "x-run-in-apifox": "https://app.apifox.com/web/project/9008627/apis/api-534150039-run"
+      }
+    },
+    "/{cate_id}/shops": {
+      "get": {
+        "summary": "商品列表",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "cate_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_page",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "_limit",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "examples": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "名称"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "x-apifox-mock": "{{$phone.number}}"
+                      },
+                      "address": {
+                        "type": "string",
+                        "x-apifox-mock": "{{$location.secondaryAddress}}"
+                      },
+                      "images": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "x-apifox-mock": "{{$image.avatar}}"
+                        },
+                        "minItems": 5,
+                        "maxItems": 5
+                      },
+                      "businessHours": {
+                        "type": "string",
+                        "x-apifox-mock": "{{$date.anytime}}"
+                      }
+                    },
+                    "x-apifox-orders": [
+                      "id",
+                      "name",
+                      "phone",
+                      "address",
+                      "images",
+                      "businessHours"
+                    ],
+                    "required": [
+                      "id",
+                      "name",
+                      "phone",
+                      "address",
+                      "images",
+                      "businessHours"
+                    ],
+                    "x-apifox-ignore-properties": []
+                  },
+                  "minItems": 10,
+                  "maxItems": 10
+                },
+                "example": [
+                  {
+                    "id": 60,
+                    "name": "年国荣",
+                    "phone": "12935342074",
+                    "address": "99层",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/38355014",
+                      "https://avatars.githubusercontent.com/u/31073552",
+                      "https://avatars.githubusercontent.com/u/40190303",
+                      "https://avatars.githubusercontent.com/u/57497328",
+                      "https://avatars.githubusercontent.com/u/80639265"
+                    ],
+                    "businessHours": "2027-04-23 05:59:16"
+                  },
+                  {
+                    "id": 23,
+                    "name": "仉梓晨",
+                    "phone": "094-25229338",
+                    "address": "81号楼",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/98974072",
+                      "https://avatars.githubusercontent.com/u/34581506",
+                      "https://avatars.githubusercontent.com/u/10903849",
+                      "https://avatars.githubusercontent.com/u/78962633",
+                      "https://avatars.githubusercontent.com/u/9342933"
+                    ],
+                    "businessHours": "2026-02-24 07:33:09"
+                  },
+                  {
+                    "id": 30,
+                    "name": "赫连奕泽",
+                    "phone": "047-40886665",
+                    "address": "7号房间",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/30439962",
+                      "https://avatars.githubusercontent.com/u/26066258",
+                      "https://avatars.githubusercontent.com/u/97362090",
+                      "https://avatars.githubusercontent.com/u/90330537",
+                      "https://avatars.githubusercontent.com/u/74080309"
+                    ],
+                    "businessHours": "2027-04-27 02:25:43"
+                  },
+                  {
+                    "id": 33,
+                    "name": "尹晨阳",
+                    "phone": "080-11216715",
+                    "address": "42层",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/80525769",
+                      "https://avatars.githubusercontent.com/u/38940589",
+                      "https://avatars.githubusercontent.com/u/71708366",
+                      "https://avatars.githubusercontent.com/u/93806283",
+                      "https://avatars.githubusercontent.com/u/91644633"
+                    ],
+                    "businessHours": "2027-01-07 11:04:06"
+                  },
+                  {
+                    "id": 60,
+                    "name": "阚雨桐",
+                    "phone": "017-99057026",
+                    "address": "77号院",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/37951892",
+                      "https://avatars.githubusercontent.com/u/75830725",
+                      "https://avatars.githubusercontent.com/u/72703925",
+                      "https://avatars.githubusercontent.com/u/27284949",
+                      "https://avatars.githubusercontent.com/u/75067788"
+                    ],
+                    "businessHours": "2027-06-03 18:21:25"
+                  },
+                  {
+                    "id": 73,
+                    "name": "孙奕泽",
+                    "phone": "045-45540091",
+                    "address": "62号院",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/52138124",
+                      "https://avatars.githubusercontent.com/u/64629006",
+                      "https://avatars.githubusercontent.com/u/69611138",
+                      "https://avatars.githubusercontent.com/u/53280370",
+                      "https://avatars.githubusercontent.com/u/25759337"
+                    ],
+                    "businessHours": "2025-12-04 14:16:21"
+                  },
+                  {
+                    "id": 63,
+                    "name": "始杰",
+                    "phone": "035-69507226",
+                    "address": "35号楼",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/16221266",
+                      "https://avatars.githubusercontent.com/u/20735573",
+                      "https://avatars.githubusercontent.com/u/88642569",
+                      "https://avatars.githubusercontent.com/u/13267937",
+                      "https://avatars.githubusercontent.com/u/48004526"
+                    ],
+                    "businessHours": "2027-09-10 19:33:00"
+                  },
+                  {
+                    "id": 75,
+                    "name": "匡国芳",
+                    "phone": "098-30585719",
+                    "address": "57层",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/1937548",
+                      "https://avatars.githubusercontent.com/u/79861633",
+                      "https://avatars.githubusercontent.com/u/28541040",
+                      "https://avatars.githubusercontent.com/u/60716785",
+                      "https://avatars.githubusercontent.com/u/39854559"
+                    ],
+                    "businessHours": "2026-07-04 06:51:56"
+                  },
+                  {
+                    "id": 68,
+                    "name": "东方建军",
+                    "phone": "0343-07557448",
+                    "address": "83号楼",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/23874019",
+                      "https://avatars.githubusercontent.com/u/78649115",
+                      "https://avatars.githubusercontent.com/u/53452480",
+                      "https://avatars.githubusercontent.com/u/62356172",
+                      "https://avatars.githubusercontent.com/u/37754129"
+                    ],
+                    "businessHours": "2025-11-09 04:30:56"
+                  },
+                  {
+                    "id": 95,
+                    "name": "定波",
+                    "phone": "13463252560",
+                    "address": "72号院",
+                    "images": [
+                      "https://avatars.githubusercontent.com/u/80684799",
+                      "https://avatars.githubusercontent.com/u/91753521",
+                      "https://avatars.githubusercontent.com/u/73106720",
+                      "https://avatars.githubusercontent.com/u/52961316",
+                      "https://avatars.githubusercontent.com/u/89762733"
+                    ],
+                    "businessHours": "2026-02-28 22:26:06"
+                  }
+                ]
+              }
+            },
+            "headers": {},
+            "x-apifox-name": "成功",
+            "x-apifox-ordering": 0
+          }
+        },
+        "security": [],
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "x-run-in-apifox": "https://app.apifox.com/web/project/9008627/apis/api-534190907-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
